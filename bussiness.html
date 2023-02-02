@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wedding</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+
+:root{
+  --pink:#EE0548;
+  --black:#130f40;
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+  margin:0; padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none; border:none;
+  transition: .2s linear;
+  text-transform: capitalize;
+}
+
+*::selection{
+  background:var(--pink);
+  color:#fff;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6.5rem;
+  scroll-behavior: smooth;
+}
+
+body{
+  background:var(--black);
+}
+
+section{
+  padding:3rem 9%;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  border:.2rem solid var(--black);
+  color:var(--black);
+  font-size: 1.7rem;
+  padding:.8rem 3rem;
+  cursor: pointer;
+  background: none;
+}
+
+.btn:hover{
+  background: var(--pink);
+  border-color: var(--pink);
+  color:#fff;
+}
+
+.heading{
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.heading h1{
+  font-size: 4rem;
+  color:#fff;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+header{
+  position: fixed;
+  top:0; left: 0; right: 0;
+  z-index: 10000;
+  background:var(--pink);
+  padding:2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo{
+  font-size: 2.5rem;
+  color:#fff;
+  font-weight: bolder;
+}
+
+header .navbar a{
+  color:#fff;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+header .navbar a:hover{
+  color:var(--black);
+}
+
+#menu-bar{
+  font-size:3rem;
+  color:#fff;
+  border-radius: .5rem;
+  border:.1rem solid #fff;
+  padding:.5rem 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.home{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:url(buss.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.home .content span{
+  font-size: 3rem;
+  color:var(--grey);
+}
+
+.home .content h3{
+  font-size: 6rem;
+  color:var(--black);
+  width:60rem;
+}
+
+.step-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.step-container .step{
+  background:#fff;
+  margin:1rem;
+  padding:2rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.9);
+  text-align: center;
+  flex:1 1 30rem;
+}
+
+.step-container .step span{
+  font-size: 7rem;
+  color:var(--pink);
+  font-weight: bolder;
+}
+
+.step-container .step h3{
+  font-size: 3rem;
+  color:var(--black);
+}
+
+.step-container .step p{
+  font-size: 1.5rem;
+  color:#666;
+  padding:1rem 0;
+}
+
+.vendor .box-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.vendor .box-container .box{
+  flex:1 1 30rem;
+  margin:1rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: .5rem;
+  box-shadow:0 .5rem 1rem rgba(0,0,0,.9);
+  height: 25rem;
+  cursor: pointer;
+}
+
+.vendor .box-container .box img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.vendor .box-container .box .info{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top:0; left: 0;
+  height: 100%;
+  width: 100%;
+  background:rgba(255,255,255,.8);
+  text-align: center;
+  transform: scale(1.3);
+  opacity: 0;
+}
+
+.vendor .box-container .box:hover .info{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.vendor .box-container .box:hover img{
+  transform: scale(1.3);
+}
+
+.vendor .box-container .box .info h3{
+  font-size: 3rem;
+  color:var(--black);
+}
+
+.vendor .box-container .box .info p{
+  font-size: 1.7rem;
+  color:#333;
+  padding:1rem;
+}
+
+.clients .row{
+  display: flex;
+}
+
+.clients .row .divider{
+  padding:0 1rem;
+}
+
+.clients .row .box-container .box img{
+  height: 30rem;
+  width:100%;
+  object-fit: cover;
+  border-radius: .5rem;
+  border:2rem solid #fff;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.9);
+}
+
+.clients .row .box-container .box .info{
+  padding:2rem 0;
+}
+
+.clients .row .box-container .box .info h3{
+  font-size: 2.5rem;
+  color:#fff;
+}
+
+.clients .row .box-container .box .info p{
+  font-size: 1.7rem;
+  color:#aaa;
+  padding:1rem 0;
+  font-style: italic;
+}
+
+.clients .row .box-container .box .info p i{
+  color:var(--pink);
+  padding:0 .5rem;
+}
+
+.team .box-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team .box-container .box{
+  margin:1rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.9);
+  background: #fff url() no-repeat;
+  /* background-image: url("backgoundimg.jpg"); */
+  padding:4.7rem 2rem;
+  text-align: center;
+  background-size: cover;
+  flex:1 1 33rem;
+}
+
+.team .box-container .box img{
+  border-radius: 50%;
+  object-fit: cover;
+  height: 15rem;
+  width:15rem;
+  padding:1rem;
+}
+
+.team .box-container .box h3{
+  font-size: 2.5rem;
+  color:var(--black);
+}
+
+.team .box-container .box span{
+  font-size: 2rem;
+  color:var(--pink);
+}
+
+.team .box-container .box p{
+  font-size: 1.5rem;
+  color:#333;
+  padding:1rem 0;
+}
+
+.team .box-container .box .share{
+  padding:1rem 0;
+}
+
+.team .box-container .box .share a{
+  height: 4rem;
+  width:4rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  color:var(--black);
+  background:#eee;
+}
+
+.team .box-container .box .share a:hover{
+  color:#fff;
+  background: var(--pink);
+}
+
+.contact form{
+  padding:2rem;
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow:0 .5rem 1rem rgba(0,0,0,.9);
+  text-align: center;
+}
+
+.contact form .inputBox{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact form .inputBox input, .contact form textarea{
+  border:.2rem solid rgba(0,0,0,.1);
+  font-size: 1.7rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  text-transform: none;
+  color:#333;
+}
+
+.contact form .inputBox input{
+  width:49%;
+}
+
+.contact form textarea{
+  height: 15rem;
+  width:100%;
+  resize: none;
+}
+
+.contact form .inputBox input::placeholder,
+.contact form textarea::placeholder{
+  text-transform: capitalize;
+}
+
+.contact form .inputBox input:focus,
+.contact form textarea:focus{
+  border-color: var(--pink);
+}
+
+.blog .box-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.blog .box-container .box{
+  background:#fff;
+  margin:1rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.9);
+  overflow: hidden;
+  flex:1 1 30rem;
+}
+
+.blog .box-container .box img{
+  height:25rem;
+  width:100%;
+  object-fit: cover;
+}
+
+.blog .box-container .box .info{
+  padding:2rem;
+}
+
+.blog .box-container .box .info h3{
+  color:var(--black);
+  font-size: 2.5rem;
+}
+
+.blog .box-container .box .info h3 span{
+  color:var(--pink);
+  font-weight: bolder;
+}
+
+.blog .box-container .box .info p{
+  color: #333;;
+  font-size: 1.5rem;
+  padding:1rem 0;
+}
+
+.footer{
+  padding:2.5rem 1.5rem;
+  font-size: 2rem;
+  color:var(--black);
+  background:#fff;
+  text-align: center;
+}
+
+.footer span{
+  color:var(--pink);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:1200px){
+
+  html{
+    font-size: 55%;
+  }
+
+}
+
+@media (max-width:991px){
+
+  header{
+    padding:2rem 4%;
+  }
+
+  section{
+    padding:3rem 4%;
+  }
+
+}
+
+@media (max-width:768px){
+
+  #menu-bar{
+    display: block;
+  }
+
+  header .navbar{
+    position: absolute;
+    top:100%; left: 0; right: 0;
+    background:var(--black);
+    padding:1rem 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header .navbar.nav-toggle{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a{
+    display: block;
+    background:#fff;
+    border-radius: .5rem;
+    color:var(--black);
+    margin:1.5rem;
+    padding:1rem 2rem;
+    font-size: 2.5rem;
+  }
+
+  .home{
+    justify-content: center;
+    background-position: left;
+  }
+
+  .home .content{
+    text-align: center;
+  }
+
+  .home .content span{
+    font-size: 2rem;
+  }
+
+  .home .content h3{
+    font-size: 4rem;
+    width:auto;
+  }
+
+  .clients .row{
+    flex-flow: column;
+  }
+
+  .clients .row .divider{
+    display: none;
+  }
+
+  .clients .row .box-container:last-child .box{
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+  .contact form .inputBox input{
+    width:100%;
+  }
+
+}
+
+
+@media (max-width:450px){
+
+  html{
+    font-size: 50%;
+  }
+
+}
+
+    </style>
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo">Evenzone </a>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="gallery.html">photo</a>
+        <a href="#clients">clients</a>
+        <a href="#team">team</a>
+        <a href="contactus.html">contact</a>
+       
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <span>Business agency </span>
+        <h3>we make every your Business metting   special!</h3>
+        <a href="#" class="btn">learm more</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<section class="step-container">
+
+    <div class="step">
+        <span>01</span>
+        <h3>Work </h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum porro iure esse laudantium aspernatur, veniam sunt provident eius cum ab.</p>
+        <a href="#" class="btn">learm more</a>
+    </div>
+
+    <div class="step">
+        <span>02</span>
+        <h3>save the date</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum porro iure esse laudantium aspernatur, veniam sunt provident eius cum ab.</p>
+        <a href="#" class="btn">learm more</a>
+    </div>
+
+    <div class="step">
+        <span>03</span>
+        <h3>Event</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum porro iure esse laudantium aspernatur, veniam sunt provident eius cum ab.</p>
+        <a href="#" class="btn">learm more</a>
+    </div>
+
+</section>
+
+<!-- vendor section starts  -->
+
+<section class="vendor" id="vendor">
+
+    <div class="heading">
+        <h1>top Attending bussiness</h1>
+        <img src="images/header-img.png" alt="">
+    </div>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="attending1.jpg" alt="">
+            <div class="info">
+                <h3>dressing</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, dolores.</p>
+                <a href="#" class="btn">learm more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="attending2.jpg" alt="">
+            <div class="info">
+                <h3>Florist</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, dolores.</p>
+                <a href="#" class="btn">learm more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="attending3.jpg" alt="">
+            <div class="info">
+                <h3>wedding cake</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, dolores.</p>
+                <a href="#" class="btn">learm more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="attending4.jpg" alt="">
+            <div class="info">
+                <h3>venu and hall</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, dolores.</p>
+                <a href="#" class="btn">learm more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="attending5.jpg" alt="">
+            <div class="info">
+                <h3>music and party</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, dolores.</p>
+                <a href="#" class="btn">learm more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="attend6.jpg" alt="">
+            <div class="info">
+                <h3>photographer</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, dolores.</p>
+                <a href="#" class="btn">learm more</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- vendor section ends -->
+
+<!-- client section starts  -->
+
+<section class="clients" id="clients">
+
+    <div class="heading">
+        <h1>our previous clients</h1>
+        <img src="images/header-img.png" alt="">
+    </div>
+
+    <div class="row">
+
+        <div class="box-container">
+            <div class="box">
+                <img src="bussinessclient1.jpg" alt="">
+                <div class="info">
+                    <h3>01. Amazon </h3>
+                    <p> <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet illo aut repudiandae nihil quidem perspiciatis natus placeat, inventore, vitae, quia totam ad dolores velit. Cumque, alias ullam. Nihil, aperiam hic! <i class="fas fa-quote-right"></i> </p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="bussinessclient2.jpg" alt="">
+                <div class="info">
+                    <h3>02. Future Group </h3>
+                    <p> <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet illo aut repudiandae nihil quidem perspiciatis natus placeat, inventore, vitae, quia totam ad dolores velit. Cumque, alias ullam. Nihil, aperiam hic! <i class="fas fa-quote-right"></i> </p>
+                </div>
+            </div>
+        </div>
+
+        <img src="images/divider.png" class="divider" alt="">
+
+        <div class="box-container">
+            <div class="box">
+                <div class="info">
+                    <h3>03. Amul Milk </h3>
+                    <p> <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet illo aut repudiandae nihil quidem perspiciatis natus placeat, inventore, vitae, quia totam ad dolores velit. Cumque, alias ullam. Nihil, aperiam hic! <i class="fas fa-quote-right"></i> </p>
+                </div>
+                <img src="bussinesssclient3.jpg" alt="">
+            </div>
+            <div class="box">
+                <div class="info">
+                    <h3>04. Relainece Group </h3>
+                    <p> <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet illo aut repudiandae nihil quidem perspiciatis natus placeat, inventore, vitae, quia totam ad dolores velit. Cumque, alias ullam. Nihil, aperiam hic! <i class="fas fa-quote-right"></i> </p>
+                </div>
+                <img src="bussinessclient4.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- client section ends -->
+
+<!-- team section starts  -->
+
+<section class="team" id="team">
+
+    <div class="heading">
+        <h1>our creative team</h1>
+        <img src="images/header-img.png" alt="">
+    </div>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="clientbussiness.jpg" alt="">
+            <h3>john deo</h3>
+            <span>wedding planner</span>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta nisi ea quisquam ipsa molestias itaque, quod quis id doloremque similique!</p>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="clientbussiness.jpg" alt="">
+            <h3> Sir Ratan Tata </h3>
+            <span>wedding planner</span>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta nisi ea quisquam ipsa molestias itaque, quod quis id doloremque similique!</p>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="clientbussiness.jpg" alt="">
+            <h3>Mukesh Ambani </h3>
+            <span>wedding planner</span>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta nisi ea quisquam ipsa molestias itaque, quod quis id doloremque similique!</p>
+            <div class="share">
+                <a href="https://www.facebook.com" class="fab fa-facebook-f"></a>
+                <a href="https://www.twitter.com" class="fab fa-twitter"></a>
+                <a href="https://www.facebook.com" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- team section ends -->
+
+
+<!-- blog section starts  -->
+
+<section class="blog" id="blog">
+
+    <div class="heading">
+        <h1>our latest blogs</h1>
+        <img src="images/header-img.png" alt="">
+    </div>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="blogbussiness1.jpg" alt="">
+            <div class="info">
+                <h3> <span>01. </span>  Best Blog </h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque praesentium odio a voluptate. Eaque vel ab dolorem, earum optio aliquam.</p>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="blogbussiness2.jpg" alt="">
+            <div class="info">
+                <h3> <span>02. </span> Best Bussiness Plan  </h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque praesentium odio a voluptate. Eaque vel ab dolorem, earum optio aliquam.</p>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="blogbusiness3.jpg" alt="">
+            <div class="info">
+                <h3> <span>03. </span> bussiness plan </h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque praesentium odio a voluptate. Eaque vel ab dolorem, earum optio aliquam.</p>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- blog section ends-->
+
+<!-- footer section  -->
+<footer>
+
+<div class="footer"> created by <span>Abhishek kumar singh </span> | all rights reserved! </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script> 
+
+let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('nav-toggle');
+});
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('nav-toggle');
+}
+
+</script>
+
+
+</body>
+</html>

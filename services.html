@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+
+        }
+        body{
+            background: #007bff;
+        }
+        h1{
+            text-align: center;
+            margin: 50px auto 120px ;
+            color: white ;
+
+        }
+        .main{
+            width:100;
+        min-height: 380px ;
+    text-align: center;
+position: relative;
+cursor: pointer;
+
+
+
+
+}
+.services{
+    background: white;
+    padding: 30px ;
+   border-radius: 10px ;
+   position: absolute;
+   bottom: 0;
+   z-index: 1;
+   box-shadow: 00 20px -15px #030380;
+   transition: transform .8s;
+
+}
+.services h4{
+    height: 35px ;
+    width: 80%;
+    background: white ;
+    position: relative;
+    margin: 50px auto ;
+    
+}
+.services h4::after{
+    content: '';
+    width: 40px ;
+    height: 30px ;
+    background: linear-gradient(to right , white , #007bff);
+    position: absolute;
+    right: -5px ;
+    top:-5px;
+    z-index: -1;
+}
+.services h4::before {
+    content: '';
+    width: 40px ;
+    height: 30px ;
+    background: linear-gradient(to right ,  #007bff, white);
+    position: absolute;
+    left: -5px ;
+    bottom:-5px;
+    z-index: -1;
+}
+.shadowone{
+    height: 200px ;
+    width: 80%;
+    background: white;
+    position: absolute;
+    border-radius: 10px;
+    bottom: 0;
+    left: 10%;
+    z-index: -1;
+    box-shadow: 00 20px -15px #030380;
+    transition: transform .8s;
+}
+.shadowtwo{
+    height: 200px ;
+    width: 64%;
+    background: white;
+    position: absolute;
+    border-radius: 10px;
+    bottom: 0;
+    left: 18%;
+    z-index: -2;
+}
+.main:hover .services{
+    transform: translateY(-50px);
+
+}
+.main:hover .shadowone{
+    transform: translateY(-25px);
+
+}
+    </style>
+</head>
+<body>
+    <h1>Services We provide
+
+    </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="main">
+                    <div class="services">
+                        <h4>wedding </h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat odio voluptatibus similique officiis nesciunt reiciendis eius, voluptatum perferendis. Maxime, magni. Hic ratione non architecto libero accusantium aut asperiores odit id?
+
+                    </div>
+                    <div class="shadowone"></div>
+                    <div class="shadowtwo"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="main">
+                    <div class="services">
+                        <h4>Bussiness Meet  </h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat odio voluptatibus similique officiis nesciunt reiciendis eius, voluptatum perferendis. Maxime, magni. Hic ratione non architecto libero accusantium aut asperiores odit id?
+
+                    </div>
+                    <div class="shadowone"></div>
+                    <div class="shadowtwo"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="main">
+                    <div class="services">
+                        <h4>Celebrity Management  </h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat odio voluptatibus similique officiis nesciunt reiciendis eius, voluptatum perferendis. Maxime, magni. Hic ratione non architecto libero accusantium aut asperiores odit id?
+
+                    </div>
+                    <div class="shadowone"></div>
+                    <div class="shadowtwo"></div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</body>
+</html>
